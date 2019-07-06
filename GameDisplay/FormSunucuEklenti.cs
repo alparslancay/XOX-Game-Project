@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 
-namespace WindowsFormsApp3
+namespace GameDisplay
 {
     public partial class FormSunucuEklenti : Form
     {

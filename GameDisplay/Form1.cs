@@ -9,9 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Sockets;
-/*Alparslan ÇAY 172802005 
- * Mustafa BAYIRLI 182802080*/
-namespace WindowsFormsApp3
+
+namespace GameDisplay
 {
     public partial class Form1 : Form
     {
@@ -93,7 +92,7 @@ namespace WindowsFormsApp3
                 gonderilecek_ad2 = txtbx_oyuncuadi2.Text;
 
 
-                Form2 iki_kisilik = new Form2();
+                UIHumanVsHuman iki_kisilik = new UIHumanVsHuman();
 
                 iki_kisilik.Visible = false;//Form'un görünürlüğü kapatılıp sonra açılacak.
                 iki_kisilik.Show();//Form penceresi açılıyor.

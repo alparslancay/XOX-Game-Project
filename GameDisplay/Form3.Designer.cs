@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp3
+﻿namespace GameDisplay
 {
     partial class Form3
     {
