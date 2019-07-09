@@ -58,11 +58,11 @@
     <Compile Include="UIHumanVsHuman.Designer.cs">
       <DependentUpon>UIHumanVsHuman.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="UIHumanVsAI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="UIHumanVsAI.Designer.cs">
+      <DependentUpon>UIHumanVsAI.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSunucuEklenti.cs">
       <SubType>Form</SubType>
@@ -78,8 +78,8 @@
     <EmbeddedResource Include="UIHumanVsHuman.resx">
       <DependentUpon>UIHumanVsHuman.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="UIHumanVsAI.resx">
+      <DependentUpon>UIHumanVsAI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSunucuEklenti.resx">
       <DependentUpon>FormSunucuEklenti.cs</DependentUpon>
@@ -112,6 +112,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameAI\GameAI.csproj">
+      <Project>{644BF6F3-31A2-473F-9466-374A72987C56}</Project>
+      <Name>GameAI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GameBoard\GameBoard.csproj">
       <Project>{0AEF30CF-8D91-40B7-874C-45B297D88F39}</Project>
       <Name>GameBoard</Name>

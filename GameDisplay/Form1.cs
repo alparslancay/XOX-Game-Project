@@ -103,15 +103,15 @@ namespace GameDisplay
             {   //Eğer bilgisayara karşı seçilirse 1.oyuncu adı gönderiliyor.
                 gonderilecek_ad1 = txtbx_oyuncuadi1.Text;
                 //Seçilecek zorluk seviyesine göre seviye ataması yapılıyor.
-                if(rdo_kolay.Checked == true) { gonderilecek_zorluk = 30; }
-                else if(rdo_orta.Checked == true) { gonderilecek_zorluk = 60; }
-                else if(rdo_zor.Checked == true) { gonderilecek_zorluk = 90; }
+                if(rdo_kolay.Checked == true) { gonderilecek_zorluk = 55; }
+                else if(rdo_orta.Checked == true) { gonderilecek_zorluk = 75; }
+                else if(rdo_zor.Checked == true) { gonderilecek_zorluk = 95; }
                 else { MessageBox.Show("BURADA BİR HATA VAR", "Hata Penceresi", MessageBoxButtons.OK); }
                 
                 
 
 
-                Form3 pc_karsi = new Form3();
+                UIHumanVsAI pc_karsi = new UIHumanVsAI();
 
                 pc_karsi.Visible = false;
 

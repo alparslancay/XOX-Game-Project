@@ -53,8 +53,6 @@ namespace GameDisplay
             lbl_Player2Name.Text = Form1.gonderilecek_ad2;
             imagePaths[0] = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + "/Resources/SquareXImg.png";
             imagePaths[1] = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + "/Resources/SquareOImg.png";
-
-
         }
 
         private void MoveOperationSend(int squareNum)

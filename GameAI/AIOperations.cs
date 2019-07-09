@@ -9,15 +9,14 @@ namespace GameAI
 {
     public class AIOperations
     {
-        private BoardSquares m_boardSquares;
         StatusEvalutionCalculater aIStatusCalculator;
         StatusEvalutionCalculater humanStatusCalculator;
         private readonly char m_aIMoveSymbol;
 
-        public AIOperations(BoardSquares boardSquares, char aIMoveSymbol, char humanMoveSymbol)
+        public AIOperations(char aIMoveSymbol, char humanMoveSymbol)
         {
             m_aIMoveSymbol = aIMoveSymbol;
-            m_boardSquares = boardSquares;
+           // m_boardSquares = boardSquares;
             aIStatusCalculator = new StatusEvalutionCalculater(aIMoveSymbol, humanMoveSymbol);
             humanStatusCalculator = new StatusEvalutionCalculater(humanMoveSymbol, aIMoveSymbol);
 
@@ -26,7 +25,7 @@ namespace GameAI
         public int MakeMove(int fallibilityRate)
         {
             int aIMoveSquareNum = FindBestStatusMove(fallibilityRate);
-            m_boardSquares.PlayToSquare(aIMoveSquareNum);
+            //m_boardSquares.PlayToSquare(aIMoveSquareNum);
             return aIMoveSquareNum;
         }
 
@@ -58,15 +57,13 @@ namespace GameAI
             List<int> playableSquares = FindPlayableMoves();
 
             int bestMoveValue = 999;
-            int bestMove = 0;
+            int bestMove = playableSquares[0]+1;
 
             for (int moveRecorder = 0; moveRecorder < playableSquares.Count; moveRecorder++)
             {
                 if (fallibilityRate < TakeFallibilityRate())
                 {
-
                     int currentMoveValue = FindStatus(playableSquares[moveRecorder]);
-
                     if (bestMoveValue > currentMoveValue)
                     {
                         bestMove = playableSquares[moveRecorder] + 1;
@@ -86,6 +83,7 @@ namespace GameAI
             BoardSquares.boardSquares[movePosition].positionSymbol = m_aIMoveSymbol;
 
             int statusValue = humanStatusCalculator.CalculateStatus() - aIStatusCalculator.CalculateStatus();
+            Console.WriteLine("STATUS:" + humanStatusCalculator.CalculateStatus() + aIStatusCalculator.CalculateStatus()+"\n");
             BoardSquares.boardSquares[movePosition].positionSymbol = squareSymbol;
 
             return statusValue;
